@@ -12,4 +12,4 @@ class Book(models.Model):
     Publisher = models.CharField(max_length = 50)
     PublishDate = models.DateField()
     Price = models.CharField(max_length = 50)
-# modify 3
+# modify B3

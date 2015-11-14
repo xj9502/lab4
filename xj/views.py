@@ -169,4 +169,4 @@ def search(request):
         book_list = Book.objects.filter(AuthorID = Author.objects.get(Name = post["name"]))
         c = Context({'book_list':book_list})
         return render_to_response("search.html", c)
-# modify 2
+# modify B3
