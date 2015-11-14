@@ -1,0 +1,63 @@
+﻿<html>
+	<head>
+		<title>图书管理系统</title>
+	</head>
+	<body bgcolor = #c3ddd1>
+	<style type="text/css">
+		table.hovertable {
+			font-family: verdana,arial,sans-serif;
+			font-size:11px;
+			color:#333333;
+			border-width: 1px;
+			width : 500px;
+			border-color: #999999;
+			border-collapse: collapse;
+		}
+		table.hovertable th {
+			background-color:#c3dde0;
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #a9c6c9;
+		}
+		table.hovertable tr {
+			background-color:#d4e3e5;
+		}
+		table.hovertable td {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #a9c6c9;
+		}
+		input.iinput{
+			background-color:transparent;
+		
+		}
+	</style>
+
+	<h1 align = "center">图书管理系统</h1>
+	<p>
+	<form action="../search/" method="post">
+		<b>搜索作者：</b>
+		<input class = "iinput" "type="text" name="name" size=35 value="请输入作者姓名" onfocus="if(value=='请输入作者姓名') {value=''}" onblur="if(value=='') {value='请输入作者姓名'}">
+		<input type="submit" value="搜索">
+	</form>
+	</p>
+	<table class="hovertable" border=1 align="center">
+		<tr>
+			<th><font size = 3>书籍列表</th>
+		</tr>
+		{% for book in book_list %}
+		<tr  onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+			<td align = "center"><font size = 3><a href="/book/?id={{book.ISBN}}">{{ book.Title }}</a></font> </td>
+		</tr>
+		{% endfor %}
+	</table>
+	<p align = "center">
+		<font size = 5><a href="/add_book">添加新的图书</a></font> 
+	</p>
+	<p align = "center">
+		<font size = 5><a href="/add_author">添加新的作者</a></font> 
+	</p>
+	</body>
+</html>

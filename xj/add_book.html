@@ -1,0 +1,76 @@
+﻿<html>
+	<head>
+		<title>添加图书</title>
+	</head>
+	<body bgcolor = #c3ddd1>
+			<style type="text/css">
+			table.hovertable {
+				font-family: verdana,arial,sans-serif;
+				font-size:11px;
+				color:#333333;
+				border-width: 1px;
+				width : 300px;
+				border-color: #999999;
+				border-collapse: collapse;
+			}
+			table.hovertable th {
+				background-color:#c3dde0;
+				border-width: 1px;
+				padding: 8px;
+				border-style: solid;
+				border-color: #a9c6c9;
+			}
+			table.hovertable tr {
+				background-color:#d4e3e5;
+			}
+			table.hovertable td {
+				border-width: 1px;
+				padding: 8px;
+				border-style: solid;
+				border-color: #a9c6c9;
+			}
+			input.iinput{
+				background-color:transparent;
+				border-top:0px ;
+				border-left:0px ;
+				border-right:0px ;
+			}
+
+		</style>
+		
+		
+	<h1 align = "center">添加图书</h1>
+		<form method="post" onsubmit="alert('已提交')">
+		{% csrf_token %}
+			<table class="hovertable" border=1 align="center">
+				<tr>
+					<th>项目</th><th>填写信息</th>
+				</tr>
+				<tr>
+					<td>书名</td><td><input class="iinput" name="title" type="text"></td>
+				</tr>
+				<tr>
+					<td>作者</td><td><input class="iinput" name="author" type="text"></td>
+				</tr>
+				<tr>
+					<td>ISBN</td><td><input class="iinput" name="ISBN" type="text"></td>
+				</tr>
+				<tr>
+					<td>出版社</td><td><input class="iinput" name="publisher" type="text"></td>
+				</tr>
+				<tr>
+					<td>出版日期</td><td><input class = "iinput" "type="text" name="publishdate" value="xxxx-xx-xx" onfocus="if(value=='xxxx-xx-xx') {value=''}" onblur="if(value=='') {value='xxxx-xx-xx'}"></td>
+				</tr>
+				<tr>
+					<td>价格</td><td><input class="iinput" name="price" type="text"></td>
+				</tr>
+				<tr>
+					<td colspan = 2 align="center"><input type="submit" value="保存"><input type="reset" value="重填"></td>
+				</tr>
+			</table>
+		</form>
+	<p align = "center">
+		<font size = 5><a href="../index/">返回首页</a></font>
+	</p>
+	</body>
+</html>
